@@ -1,0 +1,78 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto";
+  font-weight: 700;
+}
+
+p {
+  font-family: "Lato";
+  font-weight: 500;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  color: white;
+}
+
+h1:hover {
+  text-decoration: none;
+}
+
+.addSet {
+  color: #0087ff;
+}
+
+.addSet:hover {
+  color: #0075c1;
+  cursor: pointer;
+}
+
+.dlt {
+  color: #ff4b37;
+}
+
+.dlt:hover {
+  color: #c41500;
+  cursor: pointer;
+}
+
+#edit {
+  color: #30d839;
+}
+
+#edit:hover {
+  color: #008006;
+  cursor: pointer;
+}
+
+#dropdown {
+  color: #ff1b45f8;
+}
+
+#dropdown:hover {
+  color: #ff0937;
+  cursor: pointer;
+}
+
+.current {
+  background: linear-gradient(90deg, #ff0937 0%, #ff6315 100%);
+}
+
+.home-current {
+  color: black !important;
+  text-decoration: none !important;
+}
+
+.home-title {
+  color: gray !important;
+  text-decoration: none !important;
+}
+
+.noback {
+  border-radius: 20rem !important;
+  font-size: 1rem !important;
+  padding-left: 1.5rem !important;
+}
