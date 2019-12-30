@@ -51,8 +51,7 @@ export default class Title extends Component {
   render() {
     const rowStyle = {
       borderBottom: "2px solid #dedede",
-      background: "#f5f5f5",
-      width: "100vw"
+      background: "#f5f5f5"
     };
 
     const options = {
@@ -68,7 +67,7 @@ export default class Title extends Component {
           return (
             <div className="row align-items-center pt-4 pb-3" style={rowStyle}>
               <div className="col-lg-auto">
-                <h3 className="mb-0">
+                <h3 style={{ fontWeight: "600" }} className="mb-0">
                   {value.startDate.toLocaleDateString("en-US", options)}
                 </h3>
               </div>
@@ -78,10 +77,14 @@ export default class Title extends Component {
               <div className="col-lg-auto">
                 <AddExercise buttonLabel="add an exercise" />
               </div>
-              <div className="col.lg-auto">
-                <button className="btn" onClick={value.handleLogOut}>
-                  log out
-                </button>
+              <div className="col text-right">
+                <h5 className="mb-0">
+                  <i
+                    className="fas fa-sign-out-alt"
+                    onClick={value.handleLogOut}
+                    id="logout"
+                  ></i>
+                </h5>
               </div>
             </div>
           );

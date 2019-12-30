@@ -25,8 +25,7 @@ const EditSet = props => {
     setVisible(true);
     setTimeout(() => {
       setVisible(false);
-      console.log("activated");
-    }, 1500);
+    }, 1000);
   };
 
   return (

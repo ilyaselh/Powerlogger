@@ -14,7 +14,7 @@ export default class Volume extends Component {
     };
 
     const totalStyle = {
-      color: "#ff4444"
+      color: "#6644f0"
     };
 
     let total = 0;
@@ -32,11 +32,11 @@ export default class Volume extends Component {
             <div className="card mt-3" style={mainStyle}>
               <div className="card-body">
                 <div className="card-title">
-                  <h4>
+                  <h6 style={{ fontWeight: "800" }}>
                     {value.todaySelectedEx === ""
                       ? `Volume`
                       : `Volume for the ${value.todaySelectedEx}`}
-                  </h4>
+                  </h6>
                 </div>
                 <div className="mb-4" style={line}></div>
                 <div className="card-text">

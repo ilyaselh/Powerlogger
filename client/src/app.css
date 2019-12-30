@@ -1,16 +1,9 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Roboto";
-  font-weight: 700;
+* {
+  font-family: "Montserrat";
 }
 
-p {
-  font-family: "Lato";
-  font-weight: 500;
+.menu {
+  font-weight: 600;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   padding-left: 1.5rem;
@@ -49,16 +42,25 @@ h1:hover {
 }
 
 #dropdown {
-  color: #ff1b45f8;
+  color: #6644f0;
 }
 
 #dropdown:hover {
-  color: #ff0937;
+  color: #6644f0;
+  cursor: pointer;
+}
+
+#logout {
+  color: #6644f0;
+}
+
+#logout:hover {
+  color: #6644f0;
   cursor: pointer;
 }
 
 .current {
-  background: linear-gradient(90deg, #ff0937 0%, #ff6315 100%);
+  background: #2f2f2f;
 }
 
 .home-current {

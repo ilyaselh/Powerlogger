@@ -10,7 +10,7 @@ import { Redirect } from "react-router-dom";
 export default class Log extends Component {
   render() {
     const mainStyle = {
-      marginLeft: "13rem",
+      paddingLeft: "13rem",
       background: "#e7e7e7"
     };
 
@@ -32,41 +32,42 @@ export default class Log extends Component {
                   <div style={mainStyle} className="h-100">
                     <div className="container-fluid">
                       <Title />
-                      <div className="row pl-3">
-                        <div className="row left pr-3">
-                          <span className="col left">
-                            {value.exercises.map(item => {
-                              if (
-                                item.date ===
-                                value.startDate.toLocaleDateString(
-                                  "en-US",
-                                  options
-                                )
-                              ) {
-                                return (
-                                  <Exercise
-                                    key={item._id}
-                                    id={item._id}
-                                    name={item.name}
-                                    date={item.date}
-                                  />
-                                );
-                              }
-                            })}
-                          </span>
+                      <div className="row pl-1">
+                        <div className="col-6">
+                          {value.exercises.map(item => {
+                            if (
+                              item.date ===
+                              value.startDate.toLocaleDateString(
+                                "en-US",
+                                options
+                              )
+                            ) {
+                              return (
+                                <Exercise
+                                  key={item._id}
+                                  id={item._id}
+                                  name={item.name}
+                                  date={item.date}
+                                />
+                              );
+                            }
+                          })}
                         </div>
-                        <div className="row right">
-                          <div className="col">
-                            <Volume />
-                            <Intensity />
-                          </div>
+                        <div
+                          className="col-6"
+                          style={{
+                            visibility: value.exercises ? "visible" : "hidden"
+                          }}
+                        >
+                          <Volume />
+                          <Intensity />
                         </div>
                       </div>
                     </div>
                   </div>
                 </>
               ) : (
-                <Redirect to="home/login" />
+                <Redirect to="/login" />
               )}
             </>
           );

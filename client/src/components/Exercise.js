@@ -1,52 +1,67 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Consumer } from "./context";
 import Sets from "./Sets";
 import Addset from "./AddSet";
+import { Alert } from "reactstrap";
 
-export default class Exercise extends Component {
-  render() {
-    const mainStyle = {
-      width: "40vw",
-      borderRadius: "0.5rem",
-      boxShadow: "0px 2px 10px 0px rgba(122,122,122,0.35)"
-    };
+export default function Exercise(props) {
+  const [visible, setVisible] = useState(false);
+  const onDismiss = () => setVisible(false);
+  const onOpen = () => {
+    setVisible(true);
+    setTimeout(() => {
+      setVisible(false);
+    }, 1500);
+  };
 
-    const options = {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric"
-    };
+  const mainStyle = {
+    width: "40vw",
+    borderRadius: "0.5rem",
+    boxShadow: "0px 2px 10px 0px rgba(122,122,122,0.35)"
+  };
 
-    const line = {
-      borderBottom: "2px solid #dedede"
-    };
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  };
 
-    return (
-      <Consumer>
-        {value => {
-          let todaySets = value.sets.filter(
-            item =>
-              item.name === this.props.name &&
-              item.date === value.startDate.toLocaleDateString("en-US", options)
-          );
+  const line = {
+    borderBottom: "2px solid #dedede"
+  };
 
-          return (
+  return (
+    <Consumer>
+      {value => {
+        let todaySets = value.sets.filter(
+          item =>
+            item.name === props.name &&
+            item.date === value.startDate.toLocaleDateString("en-US", options)
+        );
+
+        return (
+          <>
+            <Alert color="danger" toggle={onDismiss} isOpen={visible}>
+              Exercise deleted
+            </Alert>
             <div
               className="card mt-3"
               style={mainStyle}
               onClick={() => {
-                value.handleExClick(todaySets, this.props.name);
+                value.handleExClick(todaySets, props.name);
               }}
             >
               <div className="card-body">
                 <div className="card-title row align-items-center">
                   <div className="col">
-                    <h4 className="text-left">{this.props.name}</h4>
+                    <h6 style={{ fontWeight: "800" }} className="text-left">
+                      {props.name}
+                    </h6>
                   </div>
                   <div className="col-lg-auto">
                     <Addset
-                      name={this.props.name}
+                      name={props.name}
                       buttonLabel={<i className="fas fa-plus-circle fa-lg"></i>}
                     />
                   </div>
@@ -54,10 +69,8 @@ export default class Exercise extends Component {
                     <i
                       className="fas fa-times-circle fa-lg dlt"
                       onClick={() => {
-                        value.handleDeleteExercise(
-                          this.props.id,
-                          this.props.name
-                        );
+                        value.handleDeleteExercise(props.id, props.name);
+                        onOpen();
                       }}
                     ></i>
                   </div>
@@ -65,7 +78,7 @@ export default class Exercise extends Component {
                 <div className="mb-4" style={line}></div>
                 {value.sets.map(item => {
                   if (
-                    item.name === this.props.name &&
+                    item.name === props.name &&
                     item.date ===
                       value.startDate.toLocaleDateString("en-US", options)
                   ) {
@@ -82,9 +95,9 @@ export default class Exercise extends Component {
                 })}
               </div>
             </div>
-          );
-        }}
-      </Consumer>
-    );
-  }
+          </>
+        );
+      }}
+    </Consumer>
+  );
 }

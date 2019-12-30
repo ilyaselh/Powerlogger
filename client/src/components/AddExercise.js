@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Consumer } from "./context";
-import { Button, Button1 } from "./Button1";
+import { Button1 } from "./Button1";
 import {
   Modal,
   ModalHeader,
@@ -25,8 +25,7 @@ const AddExercise = props => {
     setVisible(true);
     setTimeout(() => {
       setVisible(false);
-      console.log("activated");
-    }, 1500);
+    }, 1000);
   };
 
   return (

@@ -11,7 +11,7 @@ export default function Sidebar() {
     top: "0",
     left: "0",
     overflowX: "hidden",
-    paddingTop: "3rem"
+    paddingTop: "1.7rem"
   };
 
   return (
@@ -20,37 +20,45 @@ export default function Sidebar() {
         return (
           <div style={mainStyle} className="text-center bg-dark">
             <Link to="/log" style={{ textDecoration: "none" }}>
-              <h3 className="text-white mb-5">PowerLogger</h3>
+              <h4 style={{ fontWeight: "800" }} className="text-white mb-5">
+                PowerLogger
+              </h4>
             </Link>
             <Link to="/log" exact style={{ textDecoration: "none" }}>
-              <p
+              <h6
                 onClick={() => value.handlePageChange("1")}
                 className={
-                  value.current === "1" ? "current text-left" : "text-left"
+                  value.current === "1"
+                    ? "current text-left menu"
+                    : "text-left menu"
                 }
               >
                 Exercises Log
-              </p>
+              </h6>
             </Link>
             <Link to="/about" style={{ textDecoration: "none" }}>
-              <p
+              <h6
                 onClick={() => value.handlePageChange("2")}
                 className={
-                  value.current === "2" ? "current text-left" : "text-left"
+                  value.current === "2"
+                    ? "current text-left menu"
+                    : "text-left menu"
                 }
               >
                 About
-              </p>
+              </h6>
             </Link>
             <Link to="/settings" style={{ textDecoration: "none" }}>
-              <p
+              <h6
                 onClick={() => value.handlePageChange("3")}
                 className={
-                  value.current === "3" ? "current text-left" : "text-left"
+                  value.current === "3"
+                    ? "current text-left menu"
+                    : "text-left menu"
                 }
               >
                 Settings
-              </p>
+              </h6>
             </Link>
           </div>
         );

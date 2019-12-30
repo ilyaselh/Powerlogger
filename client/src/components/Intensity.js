@@ -63,11 +63,11 @@ export default class Intensity extends Component {
             <div className="card mt-3" style={mainStyle}>
               <div className="card-body">
                 <div className="card-title">
-                  <h4>
+                  <h6 style={{ fontWeight: "800" }}>
                     {value.todaySelectedEx === ""
                       ? `Intensity`
                       : `Intensity for the ${value.todaySelectedEx}`}
-                  </h4>
+                  </h6>
                 </div>
                 <div className="mb-4" style={line}></div>
                 <div className="card-text text-right">
@@ -78,8 +78,8 @@ export default class Intensity extends Component {
                       text={`${avg}%`}
                       styles={buildStyles({
                         pathTransitionDuration: 1.25,
-                        textColor: "#ff4444",
-                        pathColor: "#ff4444"
+                        textColor: "#6644f0",
+                        pathColor: "#6644f0"
                       })}
                     />
                   </div>

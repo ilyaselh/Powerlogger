@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default class LogIn extends Component {
   render() {
     const mainStyle = {
-      width: "47rem",
+      width: "62vw",
       paddingLeft: "8rem"
     };
 
@@ -18,7 +18,7 @@ export default class LogIn extends Component {
               <form style={mainStyle}>
                 <div className="form-group">
                   <label htmlFor="emailInput">
-                    <h6>EMAIL</h6>
+                    <h6 style={{ fontWeight: "600" }}>EMAIL</h6>
                   </label>
                   <input
                     name="emailLog"
@@ -31,7 +31,7 @@ export default class LogIn extends Component {
                 </div>
                 <div className="form-group pb-3">
                   <label htmlFor="passInput">
-                    <h6>PASSWORD</h6>
+                    <h6 style={{ fontWeight: "600" }}>PASSWORD</h6>
                   </label>
                   <input
                     name="passLog"

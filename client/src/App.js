@@ -20,19 +20,19 @@ function App() {
         {value => (
           <>
             <Switch>
-              <Route path="/home">
-                <Welcome />
-              </Route>
-              <Route path="/log">
+              <Route path="/log" exact>
                 <Log />
               </Route>
-              <Route path="/about">
+              <Route path="/about" exact>
                 <Sidebar />
                 <About />
               </Route>
-              <Route path="/settings">
+              <Route path="/settings" exact>
                 <Sidebar />
                 <Settings />
+              </Route>
+              <Route path="/">
+                <Welcome />
               </Route>
             </Switch>
           </>

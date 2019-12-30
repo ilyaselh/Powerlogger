@@ -31,13 +31,19 @@ export default class Sets extends Component {
                   />
                 </div>
                 <div className="col">
-                  <span className="text-center">{this.props.weight} Kgs</span>
+                  <span style={{ fontWeight: "600" }} className="text-center">
+                    {this.props.weight} Kgs
+                  </span>
                 </div>
                 <div className="col">
-                  <span>{this.props.reps} reps</span>
+                  <span style={{ fontWeight: "600" }}>
+                    {this.props.reps} reps
+                  </span>
                 </div>
                 <div className="col">
-                  <span>RPE {this.props.rpe}</span>
+                  <span style={{ fontWeight: "600" }}>
+                    RPE {this.props.rpe}
+                  </span>
                 </div>
               </div>
             </div>

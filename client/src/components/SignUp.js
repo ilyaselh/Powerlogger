@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default class SignUp extends Component {
   render() {
     const mainStyle = {
-      width: "47rem",
+      width: "62vw",
       paddingLeft: "8rem"
     };
     return (
@@ -15,9 +15,9 @@ export default class SignUp extends Component {
           return (
             <>
               <form style={mainStyle}>
-                <div className="form-group ">
+                <div className="form-group">
                   <label htmlFor="nameInput">
-                    <h6>FULL NAME</h6>
+                    <h6 style={{ fontWeight: "600" }}>FULL NAME</h6>
                   </label>
                   <input
                     name="nameSign"
@@ -30,7 +30,7 @@ export default class SignUp extends Component {
                 </div>
                 <div className="form-group">
                   <label htmlFor="emailInput">
-                    <h6>EMAIL</h6>
+                    <h6 style={{ fontWeight: "600" }}>EMAIL</h6>
                   </label>
                   <input
                     name="emailSign"
@@ -43,7 +43,7 @@ export default class SignUp extends Component {
                 </div>
                 <div className="form-group pb-3">
                   <label htmlFor="passInput">
-                    <h6>PASSWORD</h6>
+                    <h6 style={{ fontWeight: "600" }}>PASSWORD</h6>
                   </label>
                   <input
                     name="passSign"

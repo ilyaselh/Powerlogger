@@ -33,6 +33,10 @@ class Provider extends Component {
     isLogged: undefined
   };
 
+  componentDidMount() {
+    this.getStuff();
+  }
+
   getStuff = () => {
     this.setState(
       {
@@ -192,6 +196,8 @@ class Provider extends Component {
               exercises: [...this.state.exercises, res.data]
             });
           });
+
+        console.log(this.state.exercises);
       }
     );
   };
