@@ -3,6 +3,7 @@ import { Consumer } from "./context";
 import Sets from "./Sets";
 import Addset from "./AddSet";
 import { Alert } from "reactstrap";
+import { Button1 } from "./Button1";
 
 export default function Exercise(props) {
   const [visible, setVisible] = useState(false);
@@ -15,7 +16,7 @@ export default function Exercise(props) {
   };
 
   const mainStyle = {
-    width: "40vw",
+    width: "55vw",
     borderRadius: "0.5rem",
     boxShadow: "0px 2px 10px 0px rgba(122,122,122,0.35)"
   };
@@ -62,7 +63,7 @@ export default function Exercise(props) {
                   <div className="col-lg-auto">
                     <Addset
                       name={props.name}
-                      buttonLabel={<i className="fas fa-plus-circle fa-lg"></i>}
+                      buttonLabel={<Button1 sm>Add Set</Button1>}
                     />
                   </div>
                   <div className="col-lg-auto">

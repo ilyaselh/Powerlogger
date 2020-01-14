@@ -8,6 +8,7 @@ import Sidebar from "./components/Sidebar";
 import Settings from "./components/Settings";
 import About from "./components/About";
 import Welcome from "./components/Welcome";
+import Tracker from "./components/Tracker";
 
 function App() {
   const left = {};
@@ -22,6 +23,9 @@ function App() {
             <Switch>
               <Route path="/log" exact>
                 <Log />
+              </Route>
+              <Route path="/tracker" exact>
+                <Tracker />
               </Route>
               <Route path="/about" exact>
                 <Sidebar />

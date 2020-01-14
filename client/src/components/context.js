@@ -1,12 +1,18 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 import axios from "axios";
 
 const context = React.createContext();
+
 const options = {
   weekday: "long",
   year: "numeric",
   month: "long",
+  day: "numeric"
+};
+
+const dataOptions = {
+  year: "numeric",
+  month: "short",
   day: "numeric"
 };
 
@@ -21,8 +27,10 @@ class Provider extends Component {
     emailLogInput: "",
     passLogInput: "",
     exerciseInput: "",
+    weightDataInput: "",
     exercises: [],
     sets: [],
+    weightData: [["time", "weight"]],
     startDate: new Date(),
     todaySelectedSets: [],
     todaySelectedEx: "",
@@ -58,6 +66,14 @@ class Provider extends Component {
           this.setState({
             sets: res.data
           });
+        });
+
+        axios.get("/tracker", { headers: headers }).then(res => {
+          res.data.map(item =>
+            this.setState({
+              weightData: [...this.state.weightData, [item.date, item.value]]
+            })
+          );
         });
       }
     );
@@ -100,8 +116,13 @@ class Provider extends Component {
       this.setState({
         passLogInput: e.target.value
       });
+    } else if (e.target.name === "weightData") {
+      this.setState({
+        weightDataInput: e.target.value
+      });
     }
   };
+
   // SET FUNCTIONS
   handleAddSet = name => {
     const newSet = {
@@ -172,6 +193,7 @@ class Provider extends Component {
         });
       });
   };
+
   //EXERCISE FUNCTIONS
   handleAddExercise = () => {
     const newExercise = {
@@ -196,8 +218,6 @@ class Provider extends Component {
               exercises: [...this.state.exercises, res.data]
             });
           });
-
-        console.log(this.state.exercises);
       }
     );
   };
@@ -223,16 +243,45 @@ class Provider extends Component {
     });
   };
 
-  handleDateChange = date => {
-    this.setState({
-      startDate: date
-    });
-  };
-
   handleExClick = (todaySets, todayEx) => {
     this.setState({
       todaySelectedSets: todaySets,
       todaySelectedEx: todayEx
+    });
+  };
+
+  //TRACKER FUNCTIONS
+  addData = () => {
+    const newClmn = {
+      date: this.state.startDate.toLocaleDateString("en-US", dataOptions),
+      value: this.state.weightDataInput,
+      user: sessionStorage.getItem("user")
+    };
+
+    this.setState(
+      {
+        token: sessionStorage.getItem("authtoken")
+      },
+      () => {
+        const headers = {
+          authtoken: this.state.token
+        };
+
+        axios.post("/tracker/add", newClmn, { headers: headers }).then(res => {
+          this.setState({
+            weightData: [
+              ...this.state.weightData,
+              [res.data.date, res.data.value]
+            ]
+          });
+        });
+      }
+    );
+  };
+
+  handleDateChange = date => {
+    this.setState({
+      startDate: date
     });
   };
 
@@ -243,7 +292,6 @@ class Provider extends Component {
   };
 
   handleSign = () => {
-    console.log("clicked");
     const newUser = {
       name: this.state.nameSignInput,
       email: this.state.emailSignInput,
@@ -325,7 +373,8 @@ class Provider extends Component {
             handleSign: this.handleSign,
             handleLog: this.handleLog,
             handleLogOut: this.handleLogOut,
-            handleClickText: this.handleClickText
+            handleClickText: this.handleClickText,
+            addData: this.addData
           }}
         >
           {this.props.children}

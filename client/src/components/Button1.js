@@ -4,7 +4,6 @@ const Button = styled.button`
   width: 12rem;
   height: 2.5rem;
   transition: all 0.25s ease-in-out;
-  font-family: "Roboto"
   font-size: 1.1rem;
   border-style: none;
   color: white;
@@ -18,8 +17,8 @@ const Button = styled.button`
 `;
 
 const Button1 = styled.button`
-  width: 10rem;
-  height: 2.25rem;
+  width: ${props => (props.sm ? "8rem" : "11rem")};
+  height: ${props => (props.sm ? "1.75rem" : "1.75rem")};
   transition: all 0.25s ease-in-out;
   font-size: 0.9rem;
   font-weight: 600;

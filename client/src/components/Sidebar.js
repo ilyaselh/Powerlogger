@@ -36,6 +36,18 @@ export default function Sidebar() {
                 Exercises Log
               </h6>
             </Link>
+            <Link to="/tracker" exact style={{ textDecoration: "none" }}>
+              <h6
+                onClick={() => value.handlePageChange("4")}
+                className={
+                  value.current === "4"
+                    ? "current text-left menu"
+                    : "text-left menu"
+                }
+              >
+                Weight Tracker
+              </h6>
+            </Link>
             <Link to="/about" style={{ textDecoration: "none" }}>
               <h6
                 onClick={() => value.handlePageChange("2")}

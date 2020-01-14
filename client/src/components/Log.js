@@ -31,9 +31,9 @@ export default class Log extends Component {
                   <Sidebar />
                   <div style={mainStyle} className="h-100">
                     <div className="container-fluid">
-                      <Title />
+                      <Title main />
                       <div className="row pl-1">
-                        <div className="col-6">
+                        <div className="col-8">
                           {value.exercises.map(item => {
                             if (
                               item.date ===
@@ -54,7 +54,7 @@ export default class Log extends Component {
                           })}
                         </div>
                         <div
-                          className="col-6"
+                          className="col-4"
                           style={{
                             visibility: value.exercises ? "visible" : "hidden"
                           }}

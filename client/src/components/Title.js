@@ -74,7 +74,14 @@ export default class Title extends Component {
               <h5 className="col-lg-auto mb-0">
                 <Date />
               </h5>
-              <div className="col-lg-auto">
+              <div
+                className="col-lg-auto"
+                style={
+                  this.props.main
+                    ? { visibility: "visible" }
+                    : { visibility: "hidden" }
+                }
+              >
                 <AddExercise buttonLabel="add an exercise" />
               </div>
               <div className="col text-right">

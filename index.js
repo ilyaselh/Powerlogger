@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const path = require("path")
+const path = require("path");
 require("dotenv/config");
 
 const app = new express();
@@ -10,19 +10,21 @@ app.use(express.json());
 const setRoute = require("./routes/setRoute");
 const exerciseRoute = require("./routes/exerciseRoute");
 const authRoute = require("./routes/auth");
+const trackerRoute = require("./routes/trackerRoute");
 
 //Middlewares
 app.use("/set", setRoute);
 app.use("/exercise", exerciseRoute);
+app.use("/tracker", trackerRoute);
 app.use("/user", authRoute);
 
 //Serve static assets if in production
-if(process.env.NODE_ENV === "production"){
- app.use(express.static("client/build"));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
 
- app.get("*", (req, res)=>{
-   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
- })
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
 }
 
 //Connecte to database

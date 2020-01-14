@@ -29,7 +29,7 @@ export default class Welcome extends Component {
                 <Redirect to="/log" />
               ) : (
                 <div className="container-fluid">
-                  <div className="row align-items-center" style={leftStyle}>
+                  <div className="row" style={leftStyle}>
                     <div className="col-3 left text-center">
                       <h1 style={{ fontWeight: "800" }} className="text-white">
                         Powerlogger
@@ -38,9 +38,9 @@ export default class Welcome extends Component {
                         Log your strength training progress
                       </h6>
                     </div>
-                    <div className="col-9 right pt-5" style={rightStyle}>
+                    <div className="col-9 right " style={rightStyle}>
                       <div
-                        className="row pt-3 mb-3 align-items-center"
+                        className="row mb-3 align-items-center"
                         style={{
                           paddingLeft: "8rem",
                           width: "40rem"
