@@ -8,11 +8,11 @@ const Button = styled.button`
   border-style: none;
   color: white;
   cursor: pointer;
-  background: #6644f0;
+  background: #2d71e0;
   padding: 0.3rem 2rem;
   border-radius: 1.5rem;
   &:hover {
-    background: #6644f0;
+    background: #2d71e0;
   }
 `;
 
@@ -25,10 +25,10 @@ const Button1 = styled.button`
   border-style: none;
   color: white;
   cursor: pointer;
-  background: #6644f0;
+  background: #2d71e0;
   border-radius: 1.5rem;
   &:hover {
-    background: #5c38ec;
+    background: #2d71e0;
   }
 `;
 

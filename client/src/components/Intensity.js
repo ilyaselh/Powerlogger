@@ -10,10 +10,16 @@ export default class Intensity extends Component {
     };
 
     const mainStyle = {
-      width: "25vw",
+      width: "100%",
       borderRadius: "0.5rem",
-      boxShadow: "0px 2px 10px 0px rgba(122,122,122,0.35)"
+      boxShadow: "0px 2px 10px 0px rgba(122,122,122,0.35)",
+      borderLeft: "4px #0059e1 solid"
     };
+
+    const totalStyle = {
+      color: "#a7a7a7"
+    };
+
     const chart = [
       [100, 96, 92, 89, 86, 84, 81, 79, 76, 74],
       [98, 94, 91, 88, 85, 82, 80, 77, 75, 72],
@@ -71,17 +77,13 @@ export default class Intensity extends Component {
                 </div>
                 <div className="mb-4" style={line}></div>
                 <div className="card-text text-right">
-                  <div className="mx-auto" style={{ width: "10rem" }}>
-                    <CircularProgressbar
-                      value={avg}
-                      strokeWidth="6"
-                      text={`${avg}%`}
-                      styles={buildStyles({
-                        pathTransitionDuration: 1.25,
-                        textColor: "#6644f0",
-                        pathColor: "#6644f0"
-                      })}
-                    />
+                  <div className="mx-auto">
+                    <h4
+                      className="text-center"
+                      style={avg === 0 ? { totalStyle } : { color: "#0059e1" }}
+                    >
+                      {avg === 0 ? "no exercise selected" : `${avg} %`}
+                    </h4>
                   </div>
                 </div>
               </div>

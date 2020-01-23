@@ -12,12 +12,17 @@ export default class Welcome extends Component {
 
   render() {
     const leftStyle = {
-      background: `#4d2bd8`
+      background: `#0059e1`,
+      borderRadius: "1.5rem 0rem 0rem 1.5rem"
     };
 
     const rightStyle = {
-      height: "100vh",
-      background: "#ececec"
+      background: "#ffffff",
+      borderRadius: "0rem 1.5rem 1.5rem 0rem"
+    };
+
+    const mainStyle = {
+      height: "90vh"
     };
 
     return (
@@ -28,9 +33,15 @@ export default class Welcome extends Component {
               {value.isLogged ? (
                 <Redirect to="/log" />
               ) : (
-                <div className="container-fluid">
-                  <div className="row" style={leftStyle}>
-                    <div className="col-3 left text-center">
+                <div
+                  className="container-fluid d-flex align-items-center justify-content-center"
+                  style={{ background: "#0032b8", height: "100vh" }}
+                >
+                  <div className="row justify-content-center" style={mainStyle}>
+                    <div
+                      className="col-lg-auto left text-center"
+                      style={leftStyle}
+                    >
                       <h1 style={{ fontWeight: "800" }} className="text-white">
                         Powerlogger
                       </h1>
@@ -38,11 +49,13 @@ export default class Welcome extends Component {
                         Log your strength training progress
                       </h6>
                     </div>
-                    <div className="col-9 right " style={rightStyle}>
+
+                    <div className="col-lg-auto right " style={rightStyle}>
                       <div
+                        id="signorlog"
                         className="row mb-3 align-items-center"
                         style={{
-                          paddingLeft: "8rem",
+                          paddingLeft: "4rem",
                           width: "40rem"
                         }}
                       >

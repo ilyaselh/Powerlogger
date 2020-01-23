@@ -16,7 +16,7 @@ export default function Exercise(props) {
   };
 
   const mainStyle = {
-    width: "55vw",
+    width: "100%",
     borderRadius: "0.5rem",
     boxShadow: "0px 2px 10px 0px rgba(122,122,122,0.35)"
   };

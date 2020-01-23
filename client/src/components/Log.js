@@ -32,8 +32,27 @@ export default class Log extends Component {
                   <div style={mainStyle} className="h-100">
                     <div className="container-fluid">
                       <Title main />
+                      <div className="row">
+                        <div
+                          className="col"
+                          style={{
+                            visibility: value.exercises ? "visible" : "hidden"
+                          }}
+                        >
+                          <Volume />
+                        </div>
+                        <div
+                          className="col"
+                          style={{
+                            visibility: value.exercises ? "visible" : "hidden"
+                          }}
+                        >
+                          {" "}
+                          <Intensity />
+                        </div>
+                      </div>
                       <div className="row pl-1">
-                        <div className="col-8">
+                        <div className="col">
                           {value.exercises.map(item => {
                             if (
                               item.date ===
@@ -52,15 +71,6 @@ export default class Log extends Component {
                               );
                             }
                           })}
-                        </div>
-                        <div
-                          className="col-4"
-                          style={{
-                            visibility: value.exercises ? "visible" : "hidden"
-                          }}
-                        >
-                          <Volume />
-                          <Intensity />
                         </div>
                       </div>
                     </div>

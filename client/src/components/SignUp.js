@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 export default class SignUp extends Component {
   render() {
     const mainStyle = {
-      width: "62vw",
-      paddingLeft: "8rem"
+      width: "50vw",
+      paddingLeft: "4rem"
     };
     return (
       <Consumer>

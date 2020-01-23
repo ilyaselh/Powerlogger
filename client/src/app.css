@@ -42,25 +42,25 @@ h1:hover {
 }
 
 #dropdown {
-  color: #6644f0;
+  color: #2d71e0;
 }
 
 #dropdown:hover {
-  color: #6644f0;
+  color: #2d71e0;
   cursor: pointer;
 }
 
 #logout {
-  color: #6644f0;
+  color: #2d71e0;
 }
 
 #logout:hover {
-  color: #6644f0;
+  color: #2d71e0;
   cursor: pointer;
 }
 
 .current {
-  background: #2f2f2f;
+  background: #004dc4;
 }
 
 .home-current {
@@ -77,12 +77,13 @@ h1:hover {
   border-radius: 20rem !important;
   font-size: 1rem !important;
   padding-left: 1.5rem !important;
+  background-color: #fcfcfc !important;
 }
 
 .left {
-  padding-top: 20vh;
+  padding-top: 15vh;
 }
 
 .right {
-  padding-top: 20vh;
+  padding-top: 15vh;
 }

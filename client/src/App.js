@@ -11,10 +11,6 @@ import Welcome from "./components/Welcome";
 import Tracker from "./components/Tracker";
 
 function App() {
-  const left = {};
-
-  const right = {};
-
   return (
     <Provider>
       <Consumer>

@@ -11,14 +11,15 @@ export default function Sidebar() {
     top: "0",
     left: "0",
     overflowX: "hidden",
-    paddingTop: "1.7rem"
+    paddingTop: "1.7rem",
+    background: "#0059e1"
   };
 
   return (
     <Consumer>
       {value => {
         return (
-          <div style={mainStyle} className="text-center bg-dark">
+          <div style={mainStyle} className="text-center">
             <Link to="/log" style={{ textDecoration: "none" }}>
               <h4 style={{ fontWeight: "800" }} className="text-white mb-5">
                 PowerLogger
